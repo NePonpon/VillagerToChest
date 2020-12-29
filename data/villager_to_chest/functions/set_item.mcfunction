@@ -20,7 +20,7 @@ scoreboard players operation 1交易の残り要素数 VillagerToChest *= #-1 Vi
 # Slotを追加する
 execute if score 1交易の残り要素数 VillagerToChest matches 0..2 run function villager_to_chest:add_slot
 
-data modify storage villager_to_chest: chest_data[] append from storage villager_to_chest: recipe_data[0]
+data modify storage villager_to_chest: chest_data append from storage villager_to_chest: recipe_data[0]
 data remove storage villager_to_chest: recipe_data[0]
 
 execute if score 1交易の残り要素数 VillagerToChest matches 3 run scoreboard players add 現在の交易順番 VillagerToChest 1
@@ -28,4 +28,4 @@ execute if score 1交易の残り要素数 VillagerToChest matches 3 run functio
 
 execute unless score 現在の交易順番 VillagerToChest = 村人の交易数 VillagerToChest run function villager_to_chest:set_item
 
-data modify block -216 4 -239 Items set from storage villager_to_chest: chest_data[0]
+data modify block -216 4 -239 Items set from storage villager_to_chest: chest_data
