@@ -11,6 +11,7 @@
 # @within
 #       villager_to_chest:save_villager
 #       villager_to_chest:set_item
+#       villager_to_chest:next_chest
 
 #buyの保存
     data modify storage villager_to_chest: recipe_data append from storage villager_to_chest: villager_data.Recipes[0].buy
