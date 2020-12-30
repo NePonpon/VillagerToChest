@@ -6,11 +6,8 @@
 
 data modify entity @e[tag=Waiting,limit=1] Tags set value ["VillagerToChest","InputChest"]
 
-#execute if score チェストの数 VillagerToChest matches 1.. as @e[tag=Start] at @e[tag=InputChest] positioned ~ 0 ~-1 if entity @e[dy=255] as @e[tag=InputChest] at @s run tag @s add right
-#execute if score チェストの数 VillagerToChest matches 1.. as @e[tag=Start] at @e[tag=InputChest] positioned ~ 0 ~-1 unless entity @e[dy=255] as @e[tag=InputChest] run tag @s add up
-
-execute if score チェストの数 VillagerToChest matches 1.. as @e[tag=Start] at @s align xyz if entity @e[tag=InputChest,dx=0,dy=255,dz=0] run tag @s add right
-execute if score チェストの数 VillagerToChest matches 1.. as @e[tag=Start] at @s align xyz unless entity @e[tag=InputChest,dx=0,dy=255,dz=0] run tag @s add up
+execute if score チェストの数 VillagerToChest matches 1.. as @e[tag=Start] at @e[tag=InputChest] positioned ~ 0 ~-1 if entity @e[dy=255] as @e[tag=InputChest] at @s run tag @s add right
+execute if score チェストの数 VillagerToChest matches 1.. as @e[tag=Start] at @e[tag=InputChest] positioned ~ 0 ~-1 unless entity @e[dy=255] as @e[tag=InputChest] run tag @s add up
 
 execute as @e[tag=right] at @s run tp ~ ~ ~-1
 execute as @e[tag=up] at @s run tp ~ ~1 ~1
