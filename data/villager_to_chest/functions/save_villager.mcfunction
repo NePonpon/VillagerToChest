@@ -17,10 +17,4 @@ scoreboard players add 現在の交易順番 VillagerToChest 0
 function villager_to_chest:save_recipes
 function villager_to_chest:set_item
 
-scoreboard players reset 1交易の残り要素数
-scoreboard players reset 現在の交易順番
-scoreboard players reset Slot
-scoreboard players reset 村人の交易数
-data remove storage villager_to_chest: villager_data
-data remove storage villager_to_chest: recipe_data
-data remove storage villager_to_chest: chest_data
+execute if score 現在の交易順番 VillagerToChest = 村人の交易数 VillagerToChest run function villager_to_chest:reset
