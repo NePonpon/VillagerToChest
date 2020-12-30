@@ -10,9 +10,9 @@ execute if score #SettingChest_Count VillagerToChest matches 2.. run kill @e[tag
 
 #チェスト設定
 execute as @e[tag=SettingChest] at @s run summon shulker ~ ~ ~ {NoAI:true,ActiveEffects:[{Id:14b,ShowParticles:false,Duration:2147483647}],Tags:["VillagerToChest","Start"],Glowing:true,Health:0.01f}
-execute as @e[tag=SettingChest] at @s run setblock ~ ~ ~ chest[facing=east]
-execute as @e[tag=SettingChest] at @s run data modify entity @s Tags set value ["VillagerToChest","Witing"]
+execute as @e[tag=SettingChest] at @s run setblock ~ ~ ~ chest[facing=east,type=right]
+execute as @e[tag=SettingChest] at @s run data modify entity @s Tags set value ["VillagerToChest","Waiting"]
 
 #設定削除
-execute as @e[tag=Witing] at @s unless entity @e[type=shulker,tag=VillagerToChest,distance=..0.2] run setblock ~ ~ ~ air
-execute as @e[tag=Witing] at @s unless entity @e[type=shulker,tag=VillagerToChest,distance=..0.2] run kill @s
+execute as @e[tag=Waiting] at @s unless entity @e[type=shulker,tag=VillagerToChest,distance=..0.2] run setblock ~ ~ ~ air
+execute as @e[tag=Waiting] at @s unless entity @e[type=shulker,tag=VillagerToChest,distance=..0.2] run kill @s
