@@ -1,8 +1,8 @@
-#> villager_to_chest:load_once
+#> villager_to_chest:work/load_once
 #
 # 初回設定
 #
-# @within function villager_to_chest:load
+# @within function villager_to_chest:work/load
 
 # スコア設定
     scoreboard players set #-1 VillagerToChest -1

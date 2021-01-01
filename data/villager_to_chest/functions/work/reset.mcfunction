@@ -1,10 +1,13 @@
-#> villager_to_chest:reset
+#> villager_to_chest:work/reset
 # 情報をリセットする
+# メイン処理のラストでもある
 #
 # @user
 #
 # @within
-#   function villager_to_chest:*
+#   function villager_to_chest:**
+
+execute as @e[tag=VillagerToChest,limit=1] run tellraw @a {"text": "コピーが完了しました。","color": "green"}
 
 execute as @e[tag=VillagerToChest] run data merge entity @s {Health:0.0f,DeathTime:19s}
 scoreboard players reset 1交易の残り要素数

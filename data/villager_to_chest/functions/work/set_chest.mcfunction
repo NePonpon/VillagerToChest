@@ -1,8 +1,8 @@
-#> villager_to_chest:set_chest
+#> villager_to_chest:work/set_chest
 # チェストを複数個設置する
 #　アイテムを設定できるようにする
 #
-# @within function villager_to_chest:save_villager
+# @within function villager_to_chest:work/save_villager
 
 data modify entity @e[tag=Waiting,limit=1] Tags set value ["VillagerToChest","InputChest"]
 
@@ -20,6 +20,6 @@ scoreboard players remove チェストの数 VillagerToChest 1
 tag @e[tag=right] remove right
 tag @e[tag=up] remove up
 
-execute if score チェストの数 VillagerToChest matches 1.. run function villager_to_chest:set_chest
+execute if score チェストの数 VillagerToChest matches 1.. run function villager_to_chest:work/set_chest
 
 execute as @e[tag=InputChest] at @e[tag=Start] run tp ~ ~ ~

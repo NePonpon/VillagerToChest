@@ -1,9 +1,9 @@
-#> villager_to_chest:add_slot
+#> villager_to_chest:work/add_slot
 #
 # Slotを追加する  
 # 圧倒的ゴリ押し処理ぞ
 #
-# @within function villager_to_chest:set_item
+# @within function villager_to_chest:work/set_item
 
 scoreboard players set Slot VillagerToChest 0
 

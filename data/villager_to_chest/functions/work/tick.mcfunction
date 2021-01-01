@@ -1,4 +1,4 @@
-#> villager_to_chest:tick
+#> villager_to_chest:work/tick
 # tick処理  
 # チェスト設置の設定を主に行う
 # @within tag/function minecraft:tick
