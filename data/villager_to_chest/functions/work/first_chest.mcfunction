@@ -2,7 +2,10 @@
 #
 # 1つ目のチェスト処理
 #
-# @within function villager_to_chest:copy
+# @within
+#   function
+#       villager_to_chest:copy
+#       villager_to_chest:work/none_recipe_error
 
 scoreboard players add 現在の交易順番 VillagerToChest 0
 function villager_to_chest:work/save_recipes

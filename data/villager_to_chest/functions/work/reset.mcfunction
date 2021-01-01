@@ -7,7 +7,7 @@
 # @within
 #   function villager_to_chest:**
 
-execute as @e[tag=VillagerToChest,limit=1] run tellraw @a {"text": "コピーが完了しました。","color": "green"}
+execute as @e[tag=VillagerToChest,limit=1] unless score 村人の交易数 VillagerToChest matches 0 run tellraw @a {"text": "コピーが完了しました。","color": "green"}
 
 execute as @e[tag=VillagerToChest] run data merge entity @s {Health:0.0f,DeathTime:19s}
 scoreboard players reset 1交易の残り要素数

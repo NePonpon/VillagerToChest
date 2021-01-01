@@ -11,7 +11,10 @@ execute as @s if entity @e[tag=VillagerToChest] if entity @s[type=villager] run 
 
 ##実行できなかった時のエラー表示
 #設定されたチェストの未設置
-execute unless entity @e[tag=VillagerToChest] run tellraw @a[limit=1,sort=nearest] {"text": "設定されたチェストが存在しません。","color": "red","bold": true}
+execute unless entity @e[tag=VillagerToChest] run tellraw @a[limit=1,sort=nearest] {"text": "[error] 設定されたチェストが存在しません。","color": "red","bold": true}
 
 #このfunctionを実行しているエンティティが村人以外の場合
-execute as @s unless entity @s[type=villager] run tellraw @a[limit=1,sort=nearest] {"text": "このファンクションを実行できるのは村人だけです。","color": "red","bold": true}
+execute as @s unless entity @s[type=villager] run tellraw @a[limit=1,sort=nearest] {"text": "[error] このファンクションを実行できるのは村人だけです。","color": "red","bold": true}
+
+#交易内容が存在しない場合
+execute if score 村人の交易数 VillagerToChest matches 0 run function villager_to_chest:work/none_recipe_error
