@@ -15,8 +15,8 @@
  #declare score_holder #SettingChest_Count
  #declare score_holder チェストの数
 
- #declare tag SettingChest
+ #declare tag VTS_SettingChest
  #declare tag VillagerToChest
- #declare tag InputChest
- #declare tag Waiting
- #declare tag Start
+ #declare tag VTS_InputChest
+ #declare tag VTS_Waiting
+ #declare tag VTS_Start

@@ -31,4 +31,4 @@ execute if score 1交易の残り要素数 VillagerToChest matches 3 run functio
 execute if score 現在の交易順番 VillagerToChest matches 9.. run schedule function villager_to_chest:work/next_chest 1t replace
 execute if score 現在の交易順番 VillagerToChest matches ..8 unless score 現在の交易順番 VillagerToChest = 村人の交易数 VillagerToChest run function villager_to_chest:work/set_item
 
-execute at @e[tag=InputChest] run data modify block ~ ~ ~ Items set from storage villager_to_chest: chest_data
+execute at @e[tag=VTS_InputChest] run data modify block ~ ~ ~ Items set from storage villager_to_chest: chest_data

@@ -8,14 +8,14 @@
 
 #schedule clear villager_to_chest:next_chest
 
-execute as @e[tag=Start] at @e[tag=InputChest] positioned ~ 0 ~-1 if entity @e[dy=255] as @e[tag=InputChest] at @s run tag @s add right
-execute as @e[tag=Start] at @e[tag=InputChest] positioned ~ 0 ~-1 unless entity @e[dy=255] as @e[tag=InputChest] run tag @s add up
+execute as @e[tag=VTS_Start] at @e[tag=VTS_InputChest] positioned ~ 0 ~-1 if entity @e[dy=255] as @e[tag=VTS_InputChest] at @s run tag @s add VTS_side
+execute as @e[tag=VTS_Start] at @e[tag=VTS_InputChest] positioned ~ 0 ~-1 unless entity @e[dy=255] as @e[tag=VTS_InputChest] run tag @s add VTS_up
 
-execute as @e[tag=right] at @s run tp ~ ~ ~-1
-execute as @e[tag=up] at @s run tp ~ ~1 ~1
+execute as @e[tag=VTS_side] at @s run tp ~ ~ ~-1
+execute as @e[tag=VTS_up] at @s run tp ~ ~1 ~1
 
-tag @e[tag=right] remove right
-tag @e[tag=up] remove up
+tag @e[tag=VTS_side] remove VTS_side
+tag @e[tag=VTS_up] remove VTS_up
 
 data remove storage villager_to_chest: chest_data
 scoreboard players remove 村人の交易数 VillagerToChest 8

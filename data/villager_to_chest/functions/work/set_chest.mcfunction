@@ -4,22 +4,22 @@
 #
 # @within function villager_to_chest:work/save_villager
 
-data modify entity @e[tag=Waiting,limit=1] Tags set value ["VillagerToChest","InputChest"]
+data modify entity @e[tag=VTS_Waiting,limit=1] Tags set value ["VillagerToChest","VTS_InputChest"]
 
-execute if score チェストの数 VillagerToChest matches 1.. as @e[tag=Start] at @e[tag=InputChest] positioned ~ 0 ~-1 if entity @e[dy=255] as @e[tag=InputChest] at @s run tag @s add right
-execute if score チェストの数 VillagerToChest matches 1.. as @e[tag=Start] at @e[tag=InputChest] positioned ~ 0 ~-1 unless entity @e[dy=255] as @e[tag=InputChest] run tag @s add up
+execute if score チェストの数 VillagerToChest matches 1.. as @e[tag=VTS_Start] at @e[tag=VTS_InputChest] positioned ~ 0 ~-1 if entity @e[dy=255] as @e[tag=VTS_InputChest] at @s run tag @s add VTS_side
+execute if score チェストの数 VillagerToChest matches 1.. as @e[tag=VTS_Start] at @e[tag=VTS_InputChest] positioned ~ 0 ~-1 unless entity @e[dy=255] as @e[tag=VTS_InputChest] run tag @s add VTS_up
 
-execute as @e[tag=right] at @s run tp ~ ~ ~-1
-execute as @e[tag=up] at @s run tp ~ ~1 ~1
+execute as @e[tag=VTS_side] at @s run tp ~ ~ ~-1
+execute as @e[tag=VTS_up] at @s run tp ~ ~1 ~1
 
-execute as @e[tag=right] at @s run setblock ~ ~ ~ chest[facing=east,type=left]
-execute as @e[tag=up] at @s run setblock ~ ~ ~ chest[facing=east,type=right]
+execute as @e[tag=VTS_side] at @s run setblock ~ ~ ~ chest[facing=east,type=left]
+execute as @e[tag=VTS_up] at @s run setblock ~ ~ ~ chest[facing=east,type=right]
 
 scoreboard players remove チェストの数 VillagerToChest 1
 
-tag @e[tag=right] remove right
-tag @e[tag=up] remove up
+tag @e[tag=VTS_side] remove VTS_side
+tag @e[tag=VTS_up] remove VTS_up
 
 execute if score チェストの数 VillagerToChest matches 1.. run function villager_to_chest:work/set_chest
 
-execute as @e[tag=InputChest] at @e[tag=Start] run tp ~ ~ ~
+execute as @e[tag=VTS_InputChest] at @e[tag=VTS_Start] run tp ~ ~ ~
