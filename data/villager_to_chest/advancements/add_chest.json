@@ -1,0 +1,16 @@
+{
+    "criteria": {
+        "add_chest":{
+            "trigger": "item_used_on_block",
+            "conditions": {
+                "item": {
+                    "item": "armor_stand",
+                    "nbt": "{EntityTag:{Tags:[\"VillagerToChest\"]}}"
+                }
+            }
+        }
+    },
+    "rewards": {
+        "function": "villager_to_chest:work/add_chest"
+    }
+}
