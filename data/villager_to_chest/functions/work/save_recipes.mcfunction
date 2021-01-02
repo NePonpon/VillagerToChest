@@ -1,4 +1,4 @@
-#> villager_to_chest:save_recipes
+#> villager_to_chest:work/save_recipes
 #
 # 交易内容のbuy,buy2,sellを保存する
 #
@@ -9,8 +9,9 @@
 #   storage villager_to_chest: recipe_data
 #
 # @within
-#       villager_to_chest:save_villager
-#       villager_to_chest:set_item
+#   function
+#       villager_to_chest:work/set_item
+#       villager_to_chest:work/first_chest
 
 #buyの保存
     data modify storage villager_to_chest: recipe_data append from storage villager_to_chest: villager_data.Recipes[0].buy
