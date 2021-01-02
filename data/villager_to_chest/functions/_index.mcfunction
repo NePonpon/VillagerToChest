@@ -14,6 +14,7 @@
  #declare score_holder 現在の交易順番
  #declare score_holder #SettingChest_Count
  #declare score_holder チェストの数
+ #declare score_holder 村人の数
 
  #declare tag VTS_SettingChest
  #declare tag VillagerToChest
